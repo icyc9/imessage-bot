@@ -1,15 +1,9 @@
-on send_imessage(first_name, last_name, phone_number, message)
+on send_imessage(phone_number, message)
   
   tell application "Messages"
-      set targetService to 1st service whose service type = iMessage
-      set targetBuddy to buddy phone_number of targetService
-      
-      try
-        send message to targetBuddy
-      on error
-        create_contact(first_name, last_name, phone_number)
-      end try
-
+      set serviceID to id of 1st service whose service type = iMessage
+      send "" to buddy phone_number of service id serviceID
+      send message to buddy phone_number of service id serviceID
   end tell
 
 end send_imessage
@@ -36,10 +30,10 @@ on delete_contact(phone_number)
     
     set contactList to people whose (value of phones contains phone_number)
     repeat with contact in contactList
-      delete contact
+      set k to idle time of contact
+      log k
     end repeat
     save
 
   end tell
 end delete_contact
-
