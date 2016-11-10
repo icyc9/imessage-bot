@@ -45,6 +45,6 @@ class MessageDispatcher(object):
             print("Dispatched message: %s" % phone_number)
             self._dispatch_message(phone_number, text)
 
-def _dispatch_message(self, phone_number, text):
-self.imessage_client.send_imessage(phone_number=phone_number, text=text)
+    def _dispatch_message(self, phone_number, text):
+        self.imessage_client.send_imessage(phone_number=phone_number, text=text)
 
