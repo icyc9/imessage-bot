@@ -42,7 +42,7 @@ class MessageDispatcher(object):
 			phone_number = decoded_message['phone_number']
 			text = decoded_message['text']
 
-			print("Dispatched message to %s" % phone_number)
+			print("Dispatched message: %s" % phone_number)
 			self._dispatch_message(phone_number, text)
 
 	def _dispatch_message(self, phone_number, text):
