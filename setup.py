@@ -7,6 +7,14 @@ ENCODING = 'utf-8'
 PACKAGE_NAME = 'pyimessage'
 
 
+local_directory = os.path.abspath(os.path.dirname(__file__))
+version_path = os.path.join(local_directory, PACKAGE_NAME, '_version.py')
+
+version_ns = {}
+with open(version_path, 'r', encoding=ENCODING) as f:
+    exec(f.read(), {}, version_ns)
+
+
 def get_requirements(requirement_file):
     requirements = list(
         open(requirement_file, 'r',
@@ -20,6 +28,7 @@ setup(name=PACKAGE_NAME,
           '': ['*.txt', '*.sql', '*.json'],
       },
       include_package_data=True,
+      version=version_ns['__version__'],
       license='BSD',
       description='Python imessage client',
       url='https://github.com/RobertChristopher/py-imessage.git',
