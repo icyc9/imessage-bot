@@ -22,3 +22,5 @@ factset/data/*
 
 # Sublime
 /*.sublime-*
+
+run.py
