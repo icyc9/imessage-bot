@@ -1,14 +1,14 @@
-import Queue
 import json
 import threading
+from multiprocessing import Queue
 
 from pyimessage.notifications.receiver import NotificationReceiver
 from pyimessage.imessage.client import iMessageClient
 from config import Config
 
 
-MESSAGE_QUEUE_NAME = Config['imessage_queue_name']
-IMESSAGE_DB = Config['imessage_db_location']
+MESSAGE_QUEUE_NAME = Config.imessage_queue_name
+IMESSAGE_DB = Config.imessage_db_location
 
 
 class MessageReceiver(object):
