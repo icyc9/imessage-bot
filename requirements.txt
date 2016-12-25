@@ -1,0 +1,4 @@
+pyimessage==0.0.0
+boto3
+PyObjC
+py-applescript
