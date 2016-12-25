@@ -8,5 +8,5 @@ class Config(object):
       'region_name': os.environ['AWS_DEFAULT_REGION'],
     }
 
-    imessage_queue_name = os.environ['IMESSSAGE_QUEUE_NAME']
+    imessage_queue_name = os.environ['IMESSAGE_QUEUE_NAME']
     imessage_db_location = os.environ['IMESSAGE_DB_LOCATION']
