@@ -1,6 +1,6 @@
 import os
 
-from imessagefun.tools.dotenv import set_env_file as _set_env
+from pyimessage.tools.dotenv import set_env_file as _set_env
 
 
 _set_env(os.path.join(
